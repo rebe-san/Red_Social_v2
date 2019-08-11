@@ -100,11 +100,11 @@ buttonRegister.addEventListener('click',()=>
 window.register(nameRegister,emailRegister,passwordRegister,passwordConfirm));
 
 // Inicio de sesión por google //
-google.addEventListener('click',googleSignIn);
+google.addEventListener('click',window.googleSignIn);
 
 
 // Inicio de sesión por facebook //
-facebook.addEventListener('click',facebookSignIn);
+facebook.addEventListener('click',window.facebookSignIn);
 
 // Observador de sesion
  window.addEventListener('load', initApp); 

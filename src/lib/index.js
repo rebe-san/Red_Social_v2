@@ -1,5 +1,4 @@
 // aqui exportaras las funciones que necesites
-
 // Registro por formulario //
 const register = (nameRegister,emailRegister,passwordRegister,passwordConfirm) => {
   console.log('funciona formulario de ingreso');
@@ -105,11 +104,9 @@ const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
 
 // Ingreso por Google //
 function googleSignIn() {
-  
     console.log('funciona google')
     // [START createprovider]
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -122,17 +119,15 @@ function googleSignIn() {
       const errorCode = error.code;
       const errorMessage = error.message;
       // The email of the user's account used.
-      const email = error.email;
+      //const email = error.email;
       // The firebase.auth.AuthCredential type that was used.
-      const credential = error.credential;
+      //const credential = error.credential;
       if (errorCode === 'auth/email-already-in-use') {
         alert('Este email ya se encuentra registrado');
       } else {
         console.log(errorMessage);
       }
-    });
-  
-
+    }); 
 }
 
 // Ingreso por facebook //
@@ -210,6 +205,6 @@ function initApp() {
  
 window.emailPasswordLogIn = emailPasswordLogIn;
 window.register = register;
-//window. googleSignIn = googleSignIn;
-//window. facebookSignIn = facebookSignIn;
+window. googleSignIn = googleSignIn;
+window. facebookSignIn = facebookSignIn;
   
