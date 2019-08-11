@@ -103,10 +103,10 @@ const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
 // }
 
 // Ingreso por Google //
-function googleSignIn() {
+const googleSignIn=()=> {
     console.log('funciona google')
     // [START createprovider]
-    let provider = new firebase.auth.GoogleAuthProvider();
+    var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -133,7 +133,7 @@ function googleSignIn() {
 // Ingreso por facebook //
 const facebookSignIn=()=>{
   console.log('funciona facebook')
-  const provider = new firebase.auth.FacebookAuthProvider();
+  var provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider)
   .then(function(result) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
