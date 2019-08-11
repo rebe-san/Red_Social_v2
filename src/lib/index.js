@@ -132,9 +132,7 @@ function googleSignIn() {
       }
     });
   }
-  else {
-    firebase.auth().signOut();
-}
+
 }
 
 // Ingreso por facebook //
